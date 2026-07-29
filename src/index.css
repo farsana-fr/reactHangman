@@ -1,13 +1,163 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --body-color: black;
+  --game-color: rgba(253, 253, 253, 0.35);
+  --game-text: rgb(243, 243, 17);
+  --head-color: rgb(225, 255, 0);
+  --button-color: white;
+}
+.app {
+  height: 100vh;
+  background-color: var(--body-color);
+  
+  color: var(--head-color);
+  font-family: "Press Start 2P", system-ui;
+}
+.game-area,
+.welcome {
+  
+  width: 70%;
+  
+  background-color: var(--game-color);
+  
+  color: var(--game-text);
+
+  box-shadow: 0 3rem 5rem rgba(244, 244, 244, 0.25);
+  position: relative;
+  padding: 5%;
+  border-radius: 5px;
+}
+.welcome button {
+  text-align: center;
+}
+.rst
+{
+  font-size: 300%;
+  color: var(--button-color);
+  cursor: pointer;
+}
+.msg {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  z-index: 4;
+}
+.keys:disabled
+{
+  opacity:1;
+}
+.hint {
+  clear: both;
+  font-family: "Caveat", cursive;
+  font-size: large;
+}
+.hint span {
+  margin-left:1%;
+  background-color: yellow;
+  color: black;
+}
+.win {
+  background-color: rgb(22, 150, 60);
+}
+.fail {
+  background-color: red;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.image {
+  float: right;
+}
+.hidden {
+  display: none;
+}
+.word {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  letter-spacing: 8px;
+}
+.overlay {
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 3;
+}
+.keyboard {
+  clear: both;
+}
+.btn-custom {
+  background-color: var(--button-color);
+}
+.keys {
+  padding: 10px;
+  width: 40px;
+  margin-top: 30px;
+}
+.btn-wrong {
+  background-color: red;
+}
+@media (max-width: 500px) {
+  .game-area {
+    width: 100%;
+    text-align: center;
+  }
+  .image {
+    display: inline;
+    float: none;
+  }
+  .word {
+    position: relative;
+    left: auto;
+  }
+  .keys {
+    width: 30px;
+  }
+  .keyboard {
+    margin-top: 0;
+  }
+  .msg
+  {
+    width: 50%;
+  }
+  .msg h2,.msg button
+  {
+    font-size: xx-small;
+    font-weight: 100;
+    
+  }
+}
+@media (max-width: 1200px) {
+  .word {
+    position: relative;
+  }
+  .keyboard {
+    margin-top: 0;
+  }
+}
+@media (max-width: 800px) {
+  .game-area {
+    text-align: center;
+  }
+  .image {
+    display: inline;
+    float: none;
+  }
+  .word {
+    position: relative;
+    left: auto;
+  }
+  .keyboard {
+    margin-top: 0;
+  }
+  .msg
+  {
+    width: 50%;
+  }
+ 
 }
